@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'poppins', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #eeeeee;}
+
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 210px;
+                height: 60px;
+                background-color: #555555;
+                color: yellow;
+                border-radius: 7px;
+                box-shadow: 3px 3px 2px #000000;}
+            
+            .hours, .minutes, .seconds {
+                font-size: 25px;
+                font-weight: bold;
+                border: 1px solid yellow;
+                background-color: #333333;
+                box-shadow: 3px 3px 2px #000000;
+                border-radius: 5px;
+                padding: 1px 5px;}
+            
+            .dots {
+                color: white;
+                font-weight: bold;
+                font-size: 20px;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <span class="hours" id="hour">
+                00
+            </span>
+            <div class="dots">
+                <p>:</p>
+            </div>
+            <span class="minutes" id="minute">
+                00
+            </span>
+            <div class="dots">
+                <p>:</p>
+            </div>
+            <span class="seconds" id="second">
+                00
+            </span>
+        </div>
+        <script>
+            function showTime() {
+                var now = new Date();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+
+                document.getElementById("hour").
+                innerHTML=hours;
+                document.getElementById("minute").
+                innerHTML=minutes;
+                document.getElementById("second").
+                innerHTML=seconds;}
+            setInterval(showTime, 10);
+        
+
+        </script>    </body>
+</html>
